@@ -1,0 +1,9 @@
+﻿@model AddColorDto
+<div>
+    <form asp-action="create" asp-controller="color" method="post">
+        <label>Color Selected</label>
+        <input asp-for="@Model.Name" type="text" />
+        <input asp-for="@Model.HexCode" type="color" />
+        <button type="submit">Create</button>
+    </form>
+</div>

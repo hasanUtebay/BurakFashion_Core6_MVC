@@ -1,0 +1,35 @@
+﻿@model List<ColorDto>
+
+<div>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Renk Adı</th>
+                    <th scope="col">Hex Kodu</th>
+                    <th scope="col">Renk</th>
+                    <th scope="col">İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 1; i < Model.Count + 1; i++)
+                {
+                    <tr>
+                        <th scope="row">@i</th>
+                        <td>@Model[i-1].Name</td>
+                        <td>@Model[i-1].HexCode</td>
+                        <td style="background-color:@Model[i-1].HexCode;">
+                        </td>
+                        <td>
+                            <a class="btn btn-warning" asp-action="Update" asp-controller="color" asp-route-id="@Model[i-1].ID">Düzenle</a>
+                            <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model[i-1].ID">Sil</a>
+                        </td>
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+</div>

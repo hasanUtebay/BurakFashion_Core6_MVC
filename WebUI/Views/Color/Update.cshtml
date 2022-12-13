@@ -1,0 +1,11 @@
+﻿@model UpdateColorDto
+
+<div>
+    <form asp-action="Update" asp-controller="color" method="post">
+        <label>Color Selected</label>
+        <input asp-for="@Model.Name" type="text" />
+        <input asp-for="@Model.HexCode" type="color" value="@Model.HexCode" />
+        <input asp-for="@Model.ID" type="hidden"/>
+        <button type="submit">Güncelle</button>
+    </form>
+</div>
